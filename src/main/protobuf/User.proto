@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package com.ppkj.myprotobuf1.protobuf;
+
+import "common/CommonHeader.proto";
+import "common/Gender.proto";
+
+option java_multiple_files = true;
+
+message User {
+
+    com.ppkj.myprotobuf1.protobuf.common.CommonHeader common = 1;
+    com.ppkj.myprotobuf1.protobuf.common.Gender gender = 2;
+    MyData myData = 3;
+
+    message MyData {
+        string name = 1;
+        string surname = 2;
+    }
+
+}
